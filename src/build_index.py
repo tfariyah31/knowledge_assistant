@@ -5,7 +5,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 
 # --- Paths ---
-PDF_PATH = os.path.join("data", "My_Data_File.pdf")  # update if renamed
+PDF_PATH = os.path.join("data", "My_Data_File.pdf")  
 DB_DIR = "db"
 
 # --- Load the PDF ---
@@ -20,8 +20,8 @@ chunks = splitter.split_documents(documents)
 
 # Add source info to each chunk
 for c in chunks:
-    c.metadata["source"] = PDF_PATH   # file path
-    # PyPDFLoader already keeps "page" in metadata
+    c.metadata["source"] = PDF_PATH  
+    
 
 # --- Create embeddings ---
 print("Loading embedding model (first run may download files)...")
